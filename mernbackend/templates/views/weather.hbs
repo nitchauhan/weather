@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {{>head}}
+</head>
+
+<body>
+    {{>navbar}}
+
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4 col-12 m-auto">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" id="cityName" placeholder="Enter City Name Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" id="submitBtn" value="search"
+                        type="submit">Search</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row my-5">
+
+            <div class="row col-md-6  col-12 bg-success m-auto">
+
+                <div class=" top_layer text-light">
+                    <span>
+                        <p id="day" class="text-capitalize display-4 text-uppercase">monday</p>
+                        <p id="todaydate" class="text-capitalize display-4 text-uppercase">11/8/2022</p>
+                    </span>
+
+                </div>
+
+                <div class="row col-md-6  col-12 bg-success m-auto">
+                    <div class="main_layer">
+                        <h2 id="city_name" class="text-capitalize text-light text-uppercase">Output</h2>
+
+                        <div class="middle_layer hidee">
+
+                            <p id="temp" class="display-3"><span id="tempid">0</span><sup>0</sup>C</p>
+                            <p id="temp_status" class="display-4"><i class="fas fa-cloud"></i></p>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <script src="js/index.js"></script>
+        <script>
+
+            const getCurrentDay = () => {
+                let weekday = new Array(7);
+                weekday[0] = "sunday";
+                weekday[1] = "Mondays";
+                weekday[2] = "Tuesday";
+                weekday[3] = "Wensday";
+                weekday[4] = "Thursday";
+                weekday[5] = "Friday";
+                weekday[6] = "Saturday";
+
+                let currentTime = new Date();
+                days = weekday[currentTime.getDay()];
+                let day = document.getElementById('day');
+
+                dates = currentTime.toLocaleDateString();
+                let todaydate = document.getElementById('todaydate');
+
+                day.innerText = days;
+                todaydate.innerText = dates;
+
+            }
+            getCurrentDay();
+        </script>
+
+{{>scriptlink}}
+</body>
+
+</html>

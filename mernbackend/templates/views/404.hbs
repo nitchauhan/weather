@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+{{>head}}
+<style>
+    .imgerr{
+        
+        background-color: antiquewhite;
+        height: 50%;
+        width: 100%;
+    }
+</style>
+
+<body>
+    {{>navbar}}
+
+
+    <div class="container my-5 mx-auto">
+                    <img src="img/download.png" alt="nitin" class="imgerr">
+        <div class="row mx-auto">
+            <div class="col-lg-10 mx-auto text-uppercase text-dark">
+                <div class="jumbotron bg-warning">
+                    <h1 class="display-4 bg-danger">{{errmsg}}</h1>
+                    <p class="lead">A 404 page not found error comes from the site and not the server. A 404 is an HTTP status code that means you're able to communicate with the server but the server can't find the specific page. An important distinction is that a 404 is different from a DNS error, in which case the server doesn't exist vs. the webpage</p>
+                    
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+                  
+{{>footer}}
+   {{>scriptlink}}
+</body>
+</html>
